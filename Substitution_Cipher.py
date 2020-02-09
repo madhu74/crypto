@@ -1,5 +1,6 @@
 """
-This is a program to break the substitution cipher
+This is a program to break the substitution cipher.
+note: this is not geared for all the ciphered text.
 """
 from collections import OrderedDict
 # http://practicalcryptography.com/ciphers/simple-substitution-cipher/
@@ -20,7 +21,7 @@ TRUTH_DICT = {"a": 8.167, "b": 1.492, "c": 2.202, "d": 4.253, "e": 12.702, "f": 
 
 current_frequency_dict = {}
 alphabet_count = 0
-#building the fequency dictionary
+# building the frequency dictionary
 for value in input_string:
     if value.isalpha():
         if value in current_frequency_dict.keys():
@@ -61,11 +62,13 @@ bag_dict = {}
 # so W -> s
 # ZT, Zt Zs -> "could be is and it since t and s already substituted then Z->i"
 # iT -> could be is or in in two letter words "T" -> "N"
+
 input_string = input_string.replace("C", "h")
 input_string = input_string.replace("G", "a")
 input_string = input_string.replace("W", "s")
 input_string = input_string.replace("Z", "i")
 input_string = input_string.replace("T", "n")
+
 # the letter intFQVDJtiQn could be "introduction" FQVDJ -> roduc
 # print(input_string)
 
